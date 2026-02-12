@@ -1,5 +1,6 @@
 :root {
-  --primary-color: #4A90E2;
+  --primary-color: #000000; /* noir */
+  --secondary-color: #4A90E2; /* bleu */
   --bg-color: #f2f2f2;
   --card-radius: 18px;
   --btn-radius: 999px;
@@ -34,7 +35,7 @@ button {
 .link-btn {
   background: none;
   border: none;
-  color: var(--primary-color);
+  color: var(--secondary-color);
   font-size: 0.9rem;
 }
 
@@ -110,7 +111,7 @@ button {
 
 .progress-bar {
   height: 100%;
-  background: var(--primary-color);
+  background: var(--secondary-color);
   width: 0%;
   transition: width 0.3s ease;
 }
@@ -250,3 +251,4 @@ button {
 .hidden {
   display: none;
 }
+
