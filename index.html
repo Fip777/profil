@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test de profil</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== PAGE D’ACCUEIL ===== -->
+<section class="home-screen" id="homeScreen">
+  <h1 class="home-title">Quel est votre profil créatif ?</h1>
+
+  <p class="home-subtitle">
+    « Un test simple et ludique pour le découvrir »
+  </p>
+
+  <!-- type="button" OBLIGATOIRE -->
+  <button type="button" class="link-btn" id="infoBtn">En savoir plus</button>
+  <button type="button" class="primary-btn" id="startBtn">Démarrer le test</button>
+</section>
+
+<!-- ===== POP-UP INFO ===== -->
+<div class="modal hidden" id="infoModal">
+  <div class="modal-content">
+    <h2>À propos du test</h2>
+    <p>
+      Ce questionnaire analyse vos réponses afin de vous associer
+      au profil qui vous correspond le mieux.
+    </p>
+    <button type="button" class="primary-btn" id="closeModalBtn">Fermer</button>
+  </div>
+</div>
+
+<!-- ===== QUIZ ===== -->
+<main class="quiz-container hidden" id="quizScreen">
+
+  <div class="question-counter" id="questionCounter"></div>
+
+  <div class="progress" id="progressContainer">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <!-- ⚠️ classe "question" AJOUTÉE -->
+  <div class="question question-card">
+    <p id="questionText"></p>
+  </div>
+
+  <!-- answers OK -->
+  <div class="answers">
+    <button type="button" class="answer-btn" id="answerA"></button>
+    <button type="button" class="answer-btn" id="answerB"></button>
+  </div>
+
+  <!-- ===== RÉSULTAT ===== -->
+  <div class="result hidden" id="result">
+
+    <div class="result-links">
+      <button type="button" class="link-btn" id="authorBtn">L’auteur</button>
+      <button type="button" class="link-btn" id="profilesBtn">8 profils</button>
+    </div>
+
+    <div class="result-card">
+      <h2 id="resultTitle"></h2>
+      <img id="resultImage" alt="">
+      <p id="resultText"></p>
+
+      <button type="button" id="restartBtn" class="primary-btn">
+        Recommencer
+      </button>
+    </div>
+  </div>
+</main>
+
+<!-- ===== PROFIL AUTEUR ===== -->
+<section class="page hidden" id="authorPage">
+  <div class="card">
+    <img src="assets/images/auteur.jpg" class="author-photo">
+    <h2>Nom de l’auteur</h2>
+    <p>Description de l’auteur, parcours, objectifs, etc.</p>
+
+    <div class="socials">
+      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+      <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+    </div>
+
+    <button type="button" class="primary-btn" id="backFromAuthor">Retour</button>
+  </div>
+</section>
+
+<!-- ===== PAGE 8 PROFILS ===== -->
+<section class="page hidden" id="profilesPage">
+  <div class="profiles-grid" id="profilesGrid"></div>
+  <button type="button" class="primary-btn" id="backFromProfiles">Retour</button>
+</section>
+
+<!-- ===== DÉTAIL PROFIL ===== -->
+<section class="page hidden" id="profileDetailPage">
+  <div class="card">
+    <h2 id="detailTitle"></h2>
+    <img id="detailImage">
+    <p id="detailText"></p>
+    <button type="button" class="primary-btn" id="backToProfiles">Retour aux profils</button>
+  </div>
+</section>
+
+<script src="js/questions.js"></script>
+<script src="js/quiz.js"></script>
+</body>
+</html>
