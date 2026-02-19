@@ -14,8 +14,10 @@
     display: flex;                 /* aligne les éléments horizontalement */
     align-items: center;           /* centre verticalement */
     justify-content: center;       /* centre horizontalement le contenu */
-    padding: 20px 30px;            /* espace haut/bas et gauche/droite */
-    gap: 10px;                     /* espace entre lignes et texte */
+    padding: 20px;            	  /* gauche/droite */
+	Padding-top: 30px;     		  /* espace haut*/
+	Padding-bottom: 0px;		  /* espace bas*/
+    gap: 10px; 
 }
 
 /* Lignes gauche et droite */
@@ -90,7 +92,7 @@ button {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px;
+  padding: 0px; 
   gap: 15px;
   }
 
@@ -99,7 +101,7 @@ button {
 .quiz-container {
   max-width: 520px;
   margin: auto;
-  padding: 20px;
+  padding: 10px; /* Espace avant carte question */
 }
 
 .question-counter {
@@ -121,6 +123,7 @@ button {
   background: var(--primary-color);
   width: 0%;
   transition: width 0.3s ease;
+  padding-top:0px;
 }
 
 .question-card {
@@ -142,7 +145,9 @@ button {
 
 .result-card {
   background: white;
-  padding: 25px;
+  padding: 0px;
+  padding-top: 0px;
+  padding-bottom: 25px;
   border-radius: var(--card-radius);
   box-shadow: var(--shadow);
   text-align: center;
@@ -169,7 +174,7 @@ button {
   box-shadow: var(--shadow);
   max-width: 500px;
   text-align: center;
-  }
+ }
 
 /* ===== UTIL ===== */
 .hidden {
