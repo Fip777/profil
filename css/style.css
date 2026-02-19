@@ -1,6 +1,6 @@
 :root {
-  --primary-color: #000000; /* noir */
-  --secondary-color: #4A90E2; /* bleu */
+  --primary-color: #0d2a5c; /* bleu foncé */
+  --secondary-color: #4A90E2; /* Film gris semi-transparent */
   --bg-color: #f2f2f2;
   --card-radius: 18px;
   --btn-radius: 999px;
@@ -8,7 +8,7 @@
   --font-main: Arial, sans-serif;
 }
 
-*==== BARRE HAUT DE PAGE ====*/
+/*==== BARRE HAUT DE PAGE ====*/
 
 .top-bar {
     display: flex;                 /* aligne les éléments horizontalement */
@@ -45,35 +45,41 @@ body {
   font-family: var(--font-main);
   background: var(--bg-color);
   color: #333;
-}
+  }
 
 /* ===== BOUTONS ===== */
 button {
   cursor: pointer;
 }
 
-.primary-btn,
-.answer-btn {
-  background: var(--primary-color);
-  color: white;
+/* boutons commencer/recommencer */
+.primary-btn{ 
+  background: var(--primary-color); /* couleur bouton */
+  color: white; /* couleur texte bouton */
   border: none;
   border-radius: var(--btn-radius);
   padding: 15px 25px;
   font-size: 1rem;
   transition: transform 0.1s ease, box-shadow 0.2s ease;
 }
+  
+/* boutons réponse */  
+.answer-btn {
+  background: #e8f0ff;           /* bleu très pâle */
+  color: #0d2a5c;                /* texte bleu foncé */
+  border: 0px solid #0d2a5c;     /* épaisseur contour bleu foncé */
+  border-radius: var(--btn-radius);
+  padding: 15px 25px;
+  font-size: 1rem;
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+  }
 
-.link-btn {
-  background: none;
-  border: none;
-  color: var(--secondary-color);
-  font-size: 0.9rem;
-}
-
-.primary-btn:hover,
-.answer-btn:hover {
+.primary-btn:hover{
   transform: translateY(-2px);
   box-shadow: var(--shadow);
+}
+.answer-btn:hover {
+  background: #d6e4ff;
 }
 
 /* ===== HOME ===== */
@@ -86,38 +92,8 @@ button {
   text-align: center;
   padding: 20px;
   gap: 15px;
-}
+  }
 
-/* ===== MODAL ===== */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5); /* Film gris semi-transparent */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-}
-
-.modal-content {
-  background: white;
-  padding: 25px;
-  border-radius: var(--card-radius); /* Cadre arrondi */
-  max-width: 400px; /* Largeur zone écriture */
-  text-align: center; /* Centrage du texte */
-  box-shadow: var(--shadow);
-}
-.modal-content h2 {
-  margin-top: 0;
-}
-
-.modal-content p {
-  margin-bottom: 25px;
-  line-height: 1.5;
-}
 
 /* ===== QUIZ ===== */
 .quiz-container {
@@ -142,7 +118,7 @@ button {
 
 .progress-bar {
   height: 100%;
-  background: var(--secondary-color);
+  background: var(--primary-color);
   width: 0%;
   transition: width 0.3s ease;
 }
@@ -158,15 +134,11 @@ button {
 .answers {
   display: flex;
   flex-direction: column;
+  padding-top: 40px; /* Espace entre question et bouton réponse*/
   gap: 20px; /* Espace entre boutons réponse*/
 }
 
 /* ===== RESULT ===== */
-.result-links {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
-}
 
 .result-card {
   background: white;
@@ -174,7 +146,7 @@ button {
   border-radius: var(--card-radius);
   box-shadow: var(--shadow);
   text-align: center;
-}
+  }
 
 .result-card img {
   max-width: 180px;
@@ -188,7 +160,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+ }
 
 .card {
   background: white;
@@ -197,90 +169,9 @@ button {
   box-shadow: var(--shadow);
   max-width: 500px;
   text-align: center;
-}
-
-.author-photo {
-  width: 150px;
-  border-radius: 50%;
-}
-
-/* ===== PROFIL AUTEUR ===== */
-.author-photo {
-  width: 150px;
-  border-radius: 50%;
-  margin-bottom: 15px;
-}
-
-.card h2 {
-  margin: 10px 0;
-}
-
-.card p {
-  margin-bottom: 20px; /* espace entre la description et les liens */
-}
-
-/* Style pour les liens sociaux */
-.socials {
-  display: flex;
-  flex-direction: column; /* liens empilés verticalement */
-  gap: 10px; /* espace entre LinkedIn et Instagram */
-  align-items: center; /* centrer horizontalement */
-  margin-bottom: 25px; /* espace entre les liens et le bouton Retour */
-}
-
-.socials a {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-weight: normal;
-  font-size: 1rem;
-}
-
-.socials a:hover {
-  text-decoration: underline;
-}
-
-/* Bouton Retour */
-#backFromAuthor {
-  margin-top: 0; /* déjà géré par margin-bottom de .socials */
-}
-
-
-/* ===== 8 PROFILS ===== */
-.profiles-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-}
-
-.profile-item {
-  position: relative;
-}
-
-.profile-item img {
-  width: 100%;
-  border-radius: var(--card-radius);
-}
-
-.profile-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.2s;
-  border-radius: var(--card-radius);
-}
-
-.profile-item:hover .profile-overlay {
-  opacity: 1;
-}
+  }
 
 /* ===== UTIL ===== */
 .hidden {
   display: none;
 }
-
-
