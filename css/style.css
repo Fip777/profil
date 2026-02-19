@@ -8,6 +8,37 @@
   --font-main: Arial, sans-serif;
 }
 
+*==== BARRE HAUT DE PAGE ====*/
+
+.top-bar {
+    display: flex;                 /* aligne les éléments horizontalement */
+    align-items: center;           /* centre verticalement */
+    justify-content: center;       /* centre horizontalement le contenu */
+    padding: 20px 30px;            /* espace haut/bas et gauche/droite */
+    gap: 10px;                     /* espace entre lignes et texte */
+}
+
+/* Lignes gauche et droite */
+.top-bar .line {
+    flex: 1;                       
+    height: 1px;                   /* épaisseur de la ligne */
+    background-color: #0d2a5c;     /* couleur du trait */
+}
+
+/* Lien central */
+.top-link {
+    text-decoration: none;         /* enlève soulignement */
+    color: #0d2a5c;                /* couleur texte */
+    font-weight: standard;         /* texte non gras */    
+    white-space: nowrap;           /* empêche retour à la ligne */
+    transition: 0.3s;
+}
+
+/* Effet au survol */
+.top-link:hover {
+    color: #0077cc;                /* couleur au survol */
+}
+
 /* ===== BASE ===== */
 body {
   margin: 0;
@@ -251,4 +282,5 @@ button {
 .hidden {
   display: none;
 }
+
 
