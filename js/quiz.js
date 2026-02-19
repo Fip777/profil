@@ -18,11 +18,16 @@ const resultText = document.getElementById("resultText");
 const resultImage = document.getElementById("resultImage");
 const restartBtn = document.getElementById("restartBtn");
 
+
 /* ===== MODALE INFO ===== */
-const infoBtn = document.getElementById("infoBtn");
-const infoModal = document.getElementById("infoModal");
-const closeModalBtn = document.getElementById("closeModalBtn");
-const startBtn = document.getElementById("startBtn");
+
+// Démarrer le quiz directement
+startBtn.addEventListener("click", () => {
+  homeScreen.classList.add("hidden");
+  quizScreen.classList.remove("hidden");
+  showQuestion();
+});
+
 
 /* ===== PROFILS ===== */
 const profiles = [
@@ -190,90 +195,6 @@ restartBtn.addEventListener("click", () => {
   showQuestion();
 });
 
-
-/* ===== MODALE INFO ===== */
-infoBtn.addEventListener("click", () => {
-  infoModal.classList.remove("hidden");
-});
-
-closeModalBtn.addEventListener("click", () => {
-  infoModal.classList.add("hidden");
-});
-
-startBtn.addEventListener("click", () => {
-  infoModal.classList.add("hidden");
-  homeScreen.classList.add("hidden");
-  quizScreen.classList.remove("hidden");
-  showQuestion();
-});
-
-/* ===== NAVIGATION RESULTAT ===== */
-const authorBtn = document.getElementById("authorBtn");
-const profilesBtn = document.getElementById("profilesBtn");
-
-const authorPage = document.getElementById("authorPage");
-const profilesPage = document.getElementById("profilesPage");
-const profileDetailPage = document.getElementById("profileDetailPage");
-
-const backFromAuthor = document.getElementById("backFromAuthor");
-const backFromProfiles = document.getElementById("backFromProfiles");
-const backToProfiles = document.getElementById("backToProfiles");
-
-const profilesGrid = document.getElementById("profilesGrid");
-
-const detailTitle = document.getElementById("detailTitle");
-const detailImage = document.getElementById("detailImage");
-const detailText = document.getElementById("detailText");
-
-authorBtn.onclick = () => {
-  quizScreen.classList.add("hidden");
-  authorPage.classList.remove("hidden");
-};
-
-profilesBtn.onclick = () => {
-  quizScreen.classList.add("hidden");
-  profilesPage.classList.remove("hidden");
-  renderProfiles();
-};
-
-backFromAuthor.onclick = () => {
-  authorPage.classList.add("hidden");
-  quizScreen.classList.remove("hidden");
-};
-
-backFromProfiles.onclick = () => {
-  profilesPage.classList.add("hidden");
-  quizScreen.classList.remove("hidden");
-};
-
-backToProfiles.onclick = () => {
-  profileDetailPage.classList.add("hidden");
-  profilesPage.classList.remove("hidden");
-};
-
-/* ===== GRILLE PROFILS ===== */
-function renderProfiles() {
-  profilesGrid.innerHTML = "";
-  profiles.forEach(p => {
-    const div = document.createElement("div");
-    div.className = "profile-item";
-    div.innerHTML = `
-      <img src="${p.image}">
-      <div class="profile-overlay">${p.title}</div>
-    `;
-    div.onclick = () => showProfileDetail(p);
-    profilesGrid.appendChild(div);
-  });
-}
-
-function showProfileDetail(profile) {
-  profilesPage.classList.add("hidden");
-  profileDetailPage.classList.remove("hidden");
-
-  detailTitle.textContent = profile.title;
-  detailImage.src = profile.image;
-  detailText.textContent = profile.description;
-}
 
 /* ===== INIT ===== */
 showQuestion();
