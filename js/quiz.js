@@ -17,7 +17,7 @@ const resultTitle = document.getElementById("resultTitle");
 const resultText = document.getElementById("resultText");
 const resultImage = document.getElementById("resultImage");
 const restartBtn = document.getElementById("restartBtn");
-
+const startBtn = document.getElementById("startBtn");
 
 /* ===== MODALE INFO ===== */
 
@@ -200,3 +200,4 @@ restartBtn.addEventListener("click", () => {
 showQuestion();
 
 });
+
