@@ -40,13 +40,13 @@ startBtn.addEventListener("click", () => {
 
 /* ===== PROFILS ===== */
 const profiles = [
-  { id: 1, title: "PROFIL 1", description: "Description du profil.", image: "assets/images/profil1.jpg" },
-  { id: 2, title: "PROFIL 2", description: "Description du profil.", image: "assets/images/profil2.jpg" },
-  { id: 3, title: "PROFIL 3", description: "Description du profil.", image: "assets/images/profil3.jpg" },
-  { id: 4, title: "PROFIL 4", description: "Description du profil.", image: "assets/images/profil4.jpg" },
-  { id: 5, title: "PROFIL 5", description: "Description du profil.", image: "assets/images/profil5.jpg" },
-  { id: 6, title: "PROFIL 6", description: "Description du profil.", image: "assets/images/profil6.jpg" },
-  { id: 7, title: "PROFIL 7", description: "Description du profil.", image: "assets/images/profil7.jpg" }
+  { id: 1, title: "PROFIL 1", description: "Description du profil.", images: "assets/images/profil1.jpg" },
+  { id: 2, title: "PROFIL 2", description: "Description du profil.", images: "assets/images/profil2.jpg" },
+  { id: 3, title: "PROFIL 3", description: "Description du profil.", images: "assets/images/profil3.jpg" },
+  { id: 4, title: "PROFIL 4", description: "Description du profil.", images: "assets/images/profil4.jpg" },
+  { id: 5, title: "PROFIL 5", description: "Description du profil.", images: "assets/images/profil5.jpg" },
+  { id: 6, title: "PROFIL 6", description: "Description du profil.", images: "assets/images/profil6.jpg" },
+  { id: 7, title: "PROFIL 7", description: "Description du profil.", images: "assets/images/profil7.jpg" }
 ];
 
 /* ===== QUESTION ===== */
