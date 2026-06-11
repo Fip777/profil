@@ -15,7 +15,7 @@
     align-items: center;           /* centre verticalement */
     justify-content: center;       /* centre horizontalement le contenu */
     padding: 20px;            	  /* gauche/droite */
-	Padding-top: 30px;     		  /* espace haut*/
+	Padding-top: 15px;     		  /* espace haut*/
 	Padding-bottom: 0px;		  /* espace bas*/
     gap: 10px; 
 }
@@ -52,6 +52,7 @@ body {
 /* ===== BOUTONS ===== */
 button {
   cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);  /* ombre autour image */
 }
 
 /* boutons commencer/recommencer */
@@ -60,17 +61,21 @@ button {
   color: white; /* couleur texte bouton */
   border: none;
   border-radius: var(--btn-radius);
-  padding: 15px 25px;
+  padding: 12px 30px;
   font-size: 1rem;
   transition: transform 0.1s ease, box-shadow 0.2s ease;
-}
+ /* centrage bouton recommencer */
+  width: fit-content;
+  margin: 20px auto 0;
+  display: block;
+   }
   
 /* boutons réponse */  
 .answer-btn {
   background: #e8f0ff;           /* bleu très pâle */
   color: #0d2a5c;                /* texte bleu foncé */
   border: 0px solid #0d2a5c;     /* épaisseur contour bleu foncé */
-  border-radius: var(--btn-radius);
+  border-radius: 11px; /* arrondi des boutons réponse */
   padding: 15px 25px;
   font-size: 1rem;
   transition: transform 0.1s ease, box-shadow 0.2s ease;
@@ -80,9 +85,11 @@ button {
   transform: translateY(-2px);
   box-shadow: var(--shadow);
 }
-.answer-btn:hover {
-  background: #d6e4ff;
+.answer-btn:active {				/* effet sélection bouton réponse */
+    transform: scale(0.96);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15) inset; 
 }
+
 
 /* ===== HOME ===== */
 .home-screen {
@@ -101,7 +108,9 @@ button {
 .quiz-container {
   max-width: 520px;
   margin: auto;
-  padding: 10px; /* Espace avant carte question */
+  padding: 10px; /* Espace côtés carte question */
+  padding-top: 30px; /* Espace avant carte question */
+  Padding-bottom:0px;
 }
 
 .question-counter {
@@ -116,7 +125,7 @@ button {
   border-radius: 4px;
   overflow: hidden;
   margin-bottom: 20px;
-}
+ }
 
 .progress-bar {
   height: 100%;
@@ -131,7 +140,7 @@ button {
   padding: 30px; /* Espace autour texte question */
   border-radius: var(--card-radius);
   box-shadow: var(--shadow);
-  margin-bottom: 45px; /* Espace avant bouton réponse*/
+  margin-bottom: 10px; /* Espace entre carte et barre progression */
 }
 
 .answers {
@@ -145,18 +154,38 @@ button {
 
 .result-card {
   background: white;
-  padding: 0px;
-  padding-top: 0px;
+  padding: 15px; /* Espace interne carte */
+  margin: 15px; /* Espace externe carte */
+  padding-top: 10px; /* Espace entre carte et titre */
   padding-bottom: 25px;
   border-radius: var(--card-radius);
   box-shadow: var(--shadow);
   text-align: center;
+  margin-bottom: 6vh;
   }
-
+  
+  .result-card img {
+  max-width: 230px;
+  margin: 20px auto;
+  margin-bottom: 40px;
+  border-radius: var(--card-radius); /* bords photos arrondis */
+  display: block;
+}
+  
+  @media(max-height: 650px){
+.result-card {
+  padding: 15px; /* Espace interne carte */
+  margin: 6px; /* Espace externe carte */
+  margin-top: 0px; /* Espace externe carte */
+  padding-top: 10px; /* Espace entre carte et titre */
+  padding-bottom: 15px; /* Espace interne bas carte */
+  margin-bottom: 15px;
+  }
 .result-card img {
   max-width: 180px;
   margin: 15px auto;
-  display: block;
+  margin-bottom: 30px;
+  }
 }
 
 /* ===== PAGES ===== */
